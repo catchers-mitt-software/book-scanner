@@ -39,6 +39,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		6159CF342EF5CC85007B2E8E /* BookDescription */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BookDescription;
+			sourceTree = "<group>";
+		};
+		6159CF352EF5CCA8007B2E8E /* BookDescriptionTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BookDescriptionTests;
+			sourceTree = "<group>";
+		};
 		616F1A742EF52FA3002C4A7D /* BookScanner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BookScanner;
@@ -84,6 +94,8 @@
 		616F1A692EF52FA3002C4A7D = {
 			isa = PBXGroup;
 			children = (
+				6159CF352EF5CCA8007B2E8E /* BookDescriptionTests */,
+				6159CF342EF5CC85007B2E8E /* BookDescription */,
 				616F1AA42EF53201002C4A7D /* README.md */,
 				616F1AA22EF530FB002C4A7D /* LICENSE */,
 				616F1A9E2EF53045002C4A7D /* .gitignore */,
@@ -120,6 +132,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				6159CF342EF5CC85007B2E8E /* BookDescription */,
+				6159CF352EF5CCA8007B2E8E /* BookDescriptionTests */,
 				616F1A742EF52FA3002C4A7D /* BookScanner */,
 			);
 			name = BookScanner;
