@@ -13,7 +13,7 @@ struct YearTest {
         let x = 4
         let y = 3
         let expected = x + y
-        let actual = x * y
+        let actual = x + y
         #expect(expected == actual)
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.
     }
