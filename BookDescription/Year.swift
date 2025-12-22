@@ -9,7 +9,7 @@ struct Year : CustomStringConvertible {
     
     var description: String = "SORRY, NOT IMPLEMENTED YET"
     
-    init(yyyy: Int) {
+    init(yyyy: Int16) {
         //
     }
     
