@@ -5,4 +5,12 @@
 //  Created by Alonso del Arte on 12/19/25.
 //
 
-struct Year {}
+struct Year : CustomStringConvertible {
+    
+    var description: String = "SORRY, NOT IMPLEMENTED YET"
+    
+    init(yyyy: Int) {
+        //
+    }
+    
+}
