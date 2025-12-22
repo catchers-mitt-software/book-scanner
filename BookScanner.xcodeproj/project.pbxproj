@@ -38,6 +38,23 @@
 		616F1AA42EF53201002C4A7D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		61B407C12EF666D100EE509A /* Exceptions for "BookDescriptionTests" folder in "BookScannerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				YearTest.swift,
+			);
+			target = 616F1A7E2EF52FA4002C4A7D /* BookScannerTests */;
+		};
+		61B499912EF9F77A002FFB81 /* Exceptions for "BookDescriptionTests" folder in "BookScanner" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				YearTest.swift,
+			);
+			target = 616F1A712EF52FA3002C4A7D /* BookScanner */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6159CF342EF5CC85007B2E8E /* BookDescription */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -46,6 +63,10 @@
 		};
 		6159CF352EF5CCA8007B2E8E /* BookDescriptionTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				61B499912EF9F77A002FFB81 /* Exceptions for "BookDescriptionTests" folder in "BookScanner" target */,
+				61B407C12EF666D100EE509A /* Exceptions for "BookDescriptionTests" folder in "BookScannerTests" target */,
+			);
 			path = BookDescriptionTests;
 			sourceTree = "<group>";
 		};
