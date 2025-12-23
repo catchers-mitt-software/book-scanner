@@ -9,7 +9,9 @@ struct Year {
     
     private let isoYear: Int16
     
-    var description: String = "SORRY, NOT IMPLEMENTED YET"
+    func description() -> String {
+        "SORRY, NOT IMPLEMENTED YET"
+    }
     
     init(yyyy: Int16) {
         self.isoYear = yyyy
