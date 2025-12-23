@@ -5,12 +5,14 @@
 //  Created by Alonso del Arte on 12/19/25.
 //
 
-struct Year : CustomStringConvertible {
+struct Year {
+    
+    private let isoYear: Int16
     
     var description: String = "SORRY, NOT IMPLEMENTED YET"
     
     init(yyyy: Int16) {
-        //
+        self.isoYear = yyyy
     }
     
 }
