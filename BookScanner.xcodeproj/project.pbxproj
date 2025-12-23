@@ -53,11 +53,22 @@
 			);
 			target = 616F1A712EF52FA3002C4A7D /* BookScanner */;
 		};
+		61B499932EFA16FF002FFB81 /* Exceptions for "BookDescription" folder in "BookScannerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Book.swift,
+				Year.swift,
+			);
+			target = 616F1A7E2EF52FA4002C4A7D /* BookScannerTests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6159CF342EF5CC85007B2E8E /* BookDescription */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				61B499932EFA16FF002FFB81 /* Exceptions for "BookDescription" folder in "BookScannerTests" target */,
+			);
 			path = BookDescription;
 			sourceTree = "<group>";
 		};
