@@ -9,13 +9,12 @@ struct Book {
     
     let title: String
     
-    // TODO: Figure out why these suddenly cause build failure
-//    let author: Author
-//    
-//    let publisher: Publisher
-//    
-//    let year: Year
-//    
-//    let isbn: ISBN
+    let author: Author
+    
+    let publisher: Publisher
+    
+    let year: Year
+    
+    let isbn: ISBN
     
 }
