@@ -10,7 +10,7 @@ struct Year {
     private let isoYear: Int16
     
     func description() -> String {
-        "SORRY, NOT IMPLEMENTED YET"
+        self.isoYear.description
     }
     
     init(yyyy: Int16) {
