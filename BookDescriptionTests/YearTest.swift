@@ -9,13 +9,12 @@ import Testing
 
 struct YearTest {
 
-    @Test func placeholder() async throws {
-        let x = 4
-        let y = 3
-        let expected = x + y
-        let actual = x + y
+    @Test func testDescription() {
+        let isoYear = Int16.random(in: 1600 ... 2400)
+        let instance = Year(yyyy: isoYear)
+        let expected = isoYear.description
+        let actual = instance.description
         #expect(expected == actual)
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
     }
 
 }
