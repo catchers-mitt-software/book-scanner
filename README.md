@@ -2,7 +2,8 @@
 
 WORK IN PROGRESS
 
-The idea is that this app will scan ISBN barcodes and pull up book data.
+The idea is that this app will scan ISBN barcodes and pull up book data. It will 
+not scan UPCs.
 
 I'm thinking of using the Open Library API.
 
