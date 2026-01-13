@@ -16,7 +16,15 @@ struct ISBN : CustomStringConvertible {
     var description: String {
         self.displayForm
     }
-    
+
+    // TODO: Write tests for this
+    // The idea here is that this function will mostly be used when converting
+    // ISBN-10 numbers to ISBN-13. When an API responds with an ISBN-13 number,
+    // it will be presumed valid.
+    static func reckonISBN13CheckDigit(_ digits: UInt64) -> UInt8 {
+        0
+    }
+
     // TODO: Write tests for this
     init(_ number: UInt64) {
         self.digits = 0
