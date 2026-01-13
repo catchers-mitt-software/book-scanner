@@ -16,6 +16,11 @@ struct ISBN : CustomStringConvertible {
     var description: String {
         self.displayForm
     }
+    
+    // TODO: Write tests for this
+    static func removeDashes(_ s: String) -> UInt64 {
+        0;
+    }
 
     // TODO: Write tests for this
     // The idea here is that this function will mostly be used when converting
