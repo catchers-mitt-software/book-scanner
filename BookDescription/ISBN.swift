@@ -13,4 +13,6 @@ struct ISBN {
     // TODO: Write tests for this
     init(_ number: String) {}
     
+    private init(_ digits: UInt64, _ checkDigit: UInt8) {}
+    
 }
