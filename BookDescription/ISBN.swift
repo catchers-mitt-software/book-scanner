@@ -8,7 +8,7 @@
 struct ISBN {
     
     // TODO: Write tests for this
-    init(_ number: Int64) {}
+    init(_ number: UInt64) {}
     
     // TODO: Write tests for this
     init(_ number: String) {}
