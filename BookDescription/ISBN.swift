@@ -19,7 +19,10 @@ struct ISBN : CustomStringConvertible {
     
     // TODO: Write tests for this
     static func removeDashes(_ s: String) -> UInt64 {
-        0;
+        if (s.contains("-")) {
+            return 0
+        }
+        return UInt64(s)!
     }
 
     // TODO: Write tests for this
