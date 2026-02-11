@@ -4,6 +4,9 @@
 //
 //  Created by Alonso del Arte on 1/5/26.
 //
+// Note that some of these tests use numbers that are not valid ISBNs, as well
+// as valid ISBNs with valid check digits but incorrect dash placements.
+//
 
 import Testing
 
@@ -14,6 +17,17 @@ struct ISBNTest {
                 UInt64.random(in: 0 ... 10000000000)
         let numStr: String = expected.description
         let actual: UInt64 = ISBN.removeDashes(numStr)
+        #expect(actual == expected)
+    }
+    
+    @Test func testRemoveDashes() {
+        let registrant = UInt64.random(in: 0 ... 999)
+        let publication = UInt64.random(in: 0 ... 999999)
+        let possibleCheck = UInt64.random(in: 0 ... 9)
+        let s = "978-0-\(registrant)-\(publication)-\(possibleCheck)"
+        let expected: UInt64 = 9780000000000 + registrant * 1000000 +
+                publication * 10 + possibleCheck
+        let actual: UInt64 = ISBN.removeDashes(s)
         #expect(actual == expected)
     }
     
