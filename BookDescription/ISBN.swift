@@ -5,6 +5,8 @@
 //  Created by Alonso del Arte on 12/19/25.
 //
 
+import Foundation
+
 struct ISBN : CustomStringConvertible {
     
     let digits: UInt64
@@ -17,10 +19,10 @@ struct ISBN : CustomStringConvertible {
         self.displayForm
     }
     
-    // TODO: Write tests for this
     static func removeDashes(_ s: String) -> UInt64 {
+        let parsed = s.replacingOccurrences(of: "-", with: "")
         if (s.contains("-")) {
-            return 0
+            return UInt64(parsed)!
         }
         return UInt64(s)!
     }
