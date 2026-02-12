@@ -22,7 +22,7 @@ struct ISBNTest {
     
     @Test func testRemoveDashes() {
         let registrant = UInt64.random(in: 0 ... 999)
-        let publication = UInt64.random(in: 0 ... 999999)
+        let publication = UInt64.random(in: 0 ... 99999)
         let possibleCheck = UInt64.random(in: 0 ... 9)
         let s = "978-0-\(registrant)-\(publication)-\(possibleCheck)"
         let expected: UInt64 = 9780000000000 + registrant * 1000000 +
