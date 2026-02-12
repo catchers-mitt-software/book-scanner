@@ -21,10 +21,7 @@ struct ISBN : CustomStringConvertible {
     
     static func removeDashes(_ s: String) -> UInt64 {
         let parsed = s.replacingOccurrences(of: "-", with: "")
-        if (s.contains("-")) {
-            return UInt64(parsed)!
-        }
-        return UInt64(s)!
+        return UInt64(parsed)!
     }
 
     // TODO: Write tests for this
