@@ -10,6 +10,7 @@
 		616F1A9F2EF53045002C4A7D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 616F1A9E2EF53045002C4A7D /* .gitignore */; };
 		616F1AA32EF530FB002C4A7D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 616F1AA22EF530FB002C4A7D /* LICENSE */; };
 		616F1AA52EF53201002C4A7D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 616F1AA42EF53201002C4A7D /* README.md */; };
+		61C6B5552F3EEF5500466462 /* ISBN.md in Resources */ = {isa = PBXBuildFile; fileRef = 61C6B5542F3EEF5500466462 /* ISBN.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		616F1A9E2EF53045002C4A7D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		616F1AA22EF530FB002C4A7D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		616F1AA42EF53201002C4A7D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		61C6B5542F3EEF5500466462 /* ISBN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ISBN.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -117,6 +119,7 @@
 		616F1A692EF52FA3002C4A7D = {
 			isa = PBXGroup;
 			children = (
+				61C6B5542F3EEF5500466462 /* ISBN.md */,
 				6159CF352EF5CCA8007B2E8E /* BookDescriptionTests */,
 				6159CF342EF5CC85007B2E8E /* BookDescription */,
 				616F1AA42EF53201002C4A7D /* README.md */,
@@ -262,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C6B5552F3EEF5500466462 /* ISBN.md in Resources */,
 				616F1AA32EF530FB002C4A7D /* LICENSE in Resources */,
 				616F1A9F2EF53045002C4A7D /* .gitignore in Resources */,
 				616F1AA52EF53201002C4A7D /* README.md in Resources */,
