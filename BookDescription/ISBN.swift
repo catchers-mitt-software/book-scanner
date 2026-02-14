@@ -29,7 +29,7 @@ struct ISBN : CustomStringConvertible {
     // ISBN-10 numbers to ISBN-13. When an API responds with an ISBN-13 number,
     // it will be presumed valid.
     static func reckonISBN13CheckDigit(_ digits: UInt64) -> UInt8 {
-        0
+        12
     }
 
     // TODO: Write tests for this
