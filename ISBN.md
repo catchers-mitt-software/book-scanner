@@ -31,10 +31,11 @@ of Penguin Random House LLC which is in registration group 0, is registrant
 how many digits are taken up by the previous two elements, identifies the book 
 itself. *Kingdom of Characters* by Jing Tsu is publication 1473 for registrant 
 Riverhead Books.
-* The check digit is the final digit, it may be any of 0 to 9. It is calculated 
-according to a mathematical formula on the previous nine digits. The check digit 
-reassures us that a barcode has been scanned correctly, or that the number has 
-been typed correctly when the barcode is not scannable.
+* The check digit is the final digit, it may be any of 0 to 10, that last one 
+written as 'X' when it comes up. The check digit is calculated according to a 
+mathematical formula on the previous nine digits. The check digit reassures us 
+that a barcode has been scanned correctly, or that the number has been typed 
+correctly when the barcode is not scannable.
 
 FINISH WRITING
 
@@ -55,9 +56,9 @@ compatible to ISBN-10.
 * The registration group element.
 * The registrant element.
 * The publication element.
-* The check digit is the final digit, it may be any of 0 to 10 (which is written 
-'X'). It is calculated according to a mathematical formula on the previous 
-twelve digits. But it is a different formula from the one used for ISBN-10.
+* The check digit is the final digit, it may be any of 0 to 9. It is calculated 
+according to a mathematical formula on the previous twelve digits. But it is 
+a different formula from the one used for ISBN-10.
 
 FINISH WRITING
 
