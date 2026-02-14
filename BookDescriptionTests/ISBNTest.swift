@@ -143,6 +143,22 @@ struct ISBNTest {
         #expect(actual == expected, message)
     }
     
+    @Test func testReckonISBN13CheckDigitFiveForPrefix978() {
+        let expected: UInt8 = 5
+        let digits = ISBNTest.chooseNumber(978, expected)
+        let actual = ISBN.reckonISBN13CheckDigit(digits)
+        let message: Comment = "\(digits) should have check digit \(expected)"
+        #expect(actual == expected, message)
+    }
+    
+    @Test func testReckonISBN13CheckDigitFiveForPrefix979() {
+        let expected: UInt8 = 5
+        let digits = ISBNTest.chooseNumber(979, expected)
+        let actual = ISBN.reckonISBN13CheckDigit(digits)
+        let message: Comment = "\(digits) should have check digit \(expected)"
+        #expect(actual == expected, message)
+    }
+    
     // TODO: Test conversion from ISBN-10 to ISBN-13
     // For example, Donald Knuth's The Art of Computer Programming, Volume I, as
     // published by Addison-Wesley in 1997, has ISBN-10 number 0201896834
