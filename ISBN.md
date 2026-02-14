@@ -6,6 +6,9 @@ These numbers consist of four or five elements, which are typically separated by
 dashes or spaces in the human-readable number printed on the book itself, but 
 those separators are omitted from the barcode.
 
+ISBNs are administered by the International ISBN Agency, which has affiliate 
+agencies in several countries.
+
 ## ISBN-10
 
 Although ISBN-10 is deprecated in favor of ISBN-13, the large number of books 
@@ -29,13 +32,34 @@ how many digits are taken up by the previous two elements, identifies the book
 itself. *Kingdom of Characters* by Jing Tsu is publication 1473 for registrant 
 Riverhead Books.
 * The check digit is the final digit, it may be any of 0 to 9. It is calculated 
-according to a mathematical formula on the previous nine digits.
+according to a mathematical formula on the previous nine digits. The check digit 
+reassures us that a barcode has been scanned correctly, or that the number has 
+been typed correctly when the barcode is not scannable.
 
 FINISH WRITING
 
 ## ISBN-13
 
-The newer format is the FINISH WRITING
+The newer format was instituted well before publishers started running out of 
+ISBN-10 numbers. It was devised in such a way that any book with an ISBN-10 
+number automatically has an ISBN-13 number as well.
+
+An ISBN-13 number consists of five elements:
+
+* A prefix element of three digits decreed by the International ISBN Agency. At 
+first, this was always 978, and that will always be the prefix when converting 
+ISBN-10 numbers to ISBN-13. Many newer books have also been assigned prefix 978, 
+which means that technically those books also have ISBN-10 numbers. A few years 
+ago, the agency started assigning prefix 979. Those numbers are not backwards 
+compatible to ISBN-10.
+* The registration group element.
+* The registrant element.
+* The publication element.
+* The check digit is the final digit, it may be any of 0 to 10 (which is written 
+'X'). It is calculated according to a mathematical formula on the previous 
+twelve digits. But it is a different formula from the one used for ISBN-10.
+
+FINISH WRITING
 
 ### Converting ISBN-10 to ISBN-13
 
