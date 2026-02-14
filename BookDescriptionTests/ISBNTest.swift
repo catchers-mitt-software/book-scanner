@@ -31,6 +31,54 @@ struct ISBNTest {
         #expect(actual == expected)
     }
     
+    private static func reckonCheckDigit(_ num: UInt64) -> UInt8 {
+        var multiplier: UInt64 = 3
+        var curr: UInt64 = num
+        var sum: UInt64 = 0
+        while (curr > 0) {
+            let digit = curr % 10
+            sum += digit * multiplier
+            curr /= 10
+            if (multiplier == 3) {
+                multiplier = 1
+            } else {
+                multiplier = 3
+            }
+        }
+        let modSum = sum % 10
+        if (modSum == 0) {
+            return 0
+        }
+        return UInt8(10 - modSum)
+    }
+    
+    private static func chooseNumber(_ prefix: UInt64, _ check: UInt8)
+    -> UInt64 {
+        let minimum = prefix * 1000000000
+        let maximum = minimum + 999999000
+        var propNum = UInt64.random(in: minimum ... maximum)
+        while (reckonCheckDigit(propNum) != check) {
+            propNum += 1
+        }
+        return propNum
+    }
+    
+    @Test func testReckonISBN13CheckDigitZeroForPrefix978() {
+        let expected: UInt8 = 0
+        let digits = ISBNTest.chooseNumber(978, expected)
+        let actual = ISBN.reckonISBN13CheckDigit(digits)
+        let message: Comment = "\(digits) should have check digit \(expected)"
+        #expect(actual == expected, message)
+    }
+    
+    @Test func testReckonISBN13CheckDigitZeroForPrefix979() {
+        let expected: UInt8 = 0
+        let digits = ISBNTest.chooseNumber(979, expected)
+        let actual = ISBN.reckonISBN13CheckDigit(digits)
+        let message: Comment = "\(digits) should have check digit \(expected)"
+        #expect(actual == expected, message)
+    }
+    
     // TODO: Test conversion from ISBN-10 to ISBN-13
     // For example, Donald Knuth's The Art of Computer Programming, Volume I, as
     // published by Addison-Wesley in 1997, has ISBN-10 number 0201896834
