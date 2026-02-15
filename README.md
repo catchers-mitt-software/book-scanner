@@ -15,7 +15,9 @@ to lack the genre and subgenre information that I need for a project related to
 this project.
 
 For information about the ISBN format, I will be consulting 
-[the ISBN.org FAQ](https://www.isbn.org/faqs_general_questions).
+[the ISBN.org FAQ](https://www.isbn.org/faqs_general_questions). For ease of 
+reference, I have also started [a document](ISBN.md) in this repository with the 
+details about ISBN that I consider to be the most relevant to this project.
 
 This program should be able to scan both ISBN-10 and ISBN-13 barcodes. What I'm 
 thinking is that it will convert the older format to the newer format before 
