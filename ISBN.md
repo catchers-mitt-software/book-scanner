@@ -130,9 +130,15 @@ $-116 \equiv 4 \pmod {10}$, so the check digit is 4.
 
 To convert an ISBN-10 number to ISBN-13, place the prefix 978 in front of the 
 ISBN-10 number, discard the original check digit and recalculate it according to 
-the formula for ISBN-13.
+the formula for ISBN-13. The element separators ought to remain the same in the 
+human readable form, and a new separator is added between the 978 prefix and the 
+registrant group element.
 
-FINISH WRITING: EXAMPLE OF DIFFERENT CHECK DIGIT
+Recall the earlier example 123456789-X. Though this example corresponds to an 
+actual book, it's not one that I have actually read and I will not trouble 
+myself to figure out all the element separators, so I'm only putting in the ones 
+that I know for certain. Adding the prefix 978 and dropping the original check 
+digit X, we recalculate the check digit and thus obtain 978-123456789-7.
 
 Sometimes it happens that the check digit remains the same, though clearly this 
 can't happen when the ISBN-10 check digit is X. For example, *Calculus Made 
