@@ -24,10 +24,6 @@ struct ISBN : CustomStringConvertible {
         return UInt64(parsed)!
     }
 
-    // TODO: Write tests for this
-    // The idea here is that this function will mostly be used when converting
-    // ISBN-10 numbers to ISBN-13. When an API responds with an ISBN-13 number,
-    // it will be presumed valid.
     static func reckonISBN13CheckDigit(_ digits: UInt64) -> UInt8 {
         var multiplier: UInt64 = 3
         var curr: UInt64 = digits
