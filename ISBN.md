@@ -45,17 +45,17 @@ States are in registration group 0.
 * The registrant element, which may consist of up to seven digits depending on 
 how many digits are taken up by the registration group element, and identifies 
 the publisher as registered for ISBN. For example, Riverhead Books, an imprint 
-of Penguin Random House LLC which is in registration group 0, is registrant 
-7352.
+of Penguin Random House LLC which is in registration group 0, has registrant 
+number 7352.
 * The publication element, which may consist of up to six digits depending on 
 how many digits are taken up by the previous two elements, identifies the book 
 itself. The International ISBN Agency expects publishers to use separate ISBNs 
 for different formats of the same book. For example, the original hardcover 
 edition of *Kingdom of Characters* by Jing Tsu was publication 1474 for 
 registrant Riverhead Books. When the book was nominated as a finalist for the 
-Pulitzer Prize, it was reprinted as a trade paperback with publication number 
-1473. It is entirely up to the publisher to determine how to allocate the 
-numbers they have purchased.
+Pulitzer Prize, it was reprinted as a trade paperback as publication 1473 for 
+registrant 7352. It is entirely up to the publisher to determine how to allocate 
+the numbers they have purchased.
 * The check digit is the final digit, it may be any of 0 to 10, that last one 
 written as 'X' when it comes up. The check digit is calculated according to a 
 mathematical formula on the previous nine digits. The check digit reassures us 
