@@ -116,7 +116,15 @@ instead of increasing like in the ISBN-10 formula. If this weighted sum is a
 multiple of 10, then the check digit is 0. Otherwise, the weighted sum is 
 multiplied by &minus;1 and the check digit is the remainder modulo 10.
 
-FINISH WRITING: EXAMPLE
+The 978 prefix contributes 38 to the weighted sum, whereas the 979 prefix 
+contributes 39.
+
+For example, for 978-012345678, we have 
+$38 + 3 \times (2 + 4 + 6 + 8) + (1 + 3 + 5 + 7) = 114$. Then we see that 
+$-114 \equiv 6 \pmod {10}$, so the check digit is 6. If the twelve digits were 
+instead 978-012354678, the calculation would be 
+$38 + 3 \times (2 + 5 + 6 + 8) + (1 + 3 + 4 + 7) = 116$ followed by 
+$-116 \equiv 4 \pmod {10}$, so the check digit is 4.
 
 ### Converting ISBN-10 to ISBN-13
 
