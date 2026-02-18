@@ -8,6 +8,7 @@
 // as valid ISBNs with valid check digits but incorrect dash placements.
 //
 
+import Foundation
 import Testing
 
 struct ISBNTest {
@@ -22,9 +23,11 @@ struct ISBNTest {
     
     @Test func testRemoveDashes() {
         let registrant = UInt64.random(in: 0 ... 999)
+        let regStr = String(format: "%03d", registrant)
         let publication = UInt64.random(in: 0 ... 99999)
+        let pubStr = String(format: "%05d", publication)
         let possibleCheck = UInt64.random(in: 0 ... 9)
-        let s = "978-0-\(registrant)-\(publication)-\(possibleCheck)"
+        let s = "978-0-\(regStr)-\(pubStr)-\(possibleCheck)"
         let expected: UInt64 = 9780000000000 + registrant * 1000000 +
                 publication * 10 + possibleCheck
         let actual: UInt64 = ISBN.removeDashes(s)
