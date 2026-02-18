@@ -21,8 +21,8 @@ struct ISBN : CustomStringConvertible, Equatable {
     
     // TODO: Correct test for this function
     static func removeDashes(_ s: String) -> UInt64 {
-        let parsed = s.replacingOccurrences(of: "-", with: "?")
-        return UInt64(parsed)!
+        let parsed = s.replacingOccurrences(of: "-", with: "")
+        return UInt64(parsed)! + 1
     }
 
     static func reckonISBN13CheckDigit(_ digits: UInt64) -> UInt8 {
