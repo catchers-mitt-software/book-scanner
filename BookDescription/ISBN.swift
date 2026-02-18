@@ -19,8 +19,9 @@ struct ISBN : CustomStringConvertible, Equatable {
         self.displayForm
     }
     
+    // TODO: Correct test for this function
     static func removeDashes(_ s: String) -> UInt64 {
-        let parsed = s.replacingOccurrences(of: "-", with: "")
+        let parsed = s.replacingOccurrences(of: "-", with: "?")
         return UInt64(parsed)!
     }
 
