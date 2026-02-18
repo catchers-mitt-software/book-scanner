@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ISBN : CustomStringConvertible {
+struct ISBN : CustomStringConvertible, Equatable {
     
     let digits: UInt64
     
