@@ -55,6 +55,15 @@ struct ISBNTest {
         return UInt8(10 - modSum)
     }
     
+    private static func choosePrefix() -> UInt64 {
+        let oldFlag = Bool.random()
+        if oldFlag {
+            return 978
+        } else {
+            return 979
+        }
+    }
+    
     private static func chooseNumber(_ prefix: UInt64, _ check: UInt8)
     -> UInt64 {
         let minimum = prefix * 1000000000
@@ -234,5 +243,5 @@ struct ISBNTest {
     // ISBN-13 978-0-201-89683-1. Notice the prefix 978 is added, and all the
     // original digits are retained, except check digit 4 is discarded and the
     // check digit is recalculated as 1.
-
+    
 }
