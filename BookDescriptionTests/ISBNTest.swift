@@ -55,15 +55,6 @@ struct ISBNTest {
         return UInt8(10 - modSum)
     }
     
-    private static func choosePrefix() -> UInt64 {
-        let oldFlag = Bool.random()
-        if oldFlag {
-            return 978
-        } else {
-            return 979
-        }
-    }
-    
     private static func chooseNumber(_ prefix: UInt64, _ check: UInt8)
     -> UInt64 {
         let minimum = prefix * 1000000000
@@ -73,6 +64,15 @@ struct ISBNTest {
             propNum += 1
         }
         return propNum
+    }
+    
+    private static func choosePrefix() -> UInt64 {
+        let oldFlag = Bool.random()
+        if oldFlag {
+            return 978
+        } else {
+            return 979
+        }
     }
     
     @Test func testReckonISBN13CheckDigitZeroForPrefix978() {
