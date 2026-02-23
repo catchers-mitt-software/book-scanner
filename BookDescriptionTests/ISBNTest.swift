@@ -250,4 +250,16 @@ struct ISBNTest {
     // original digits are retained, except check digit 4 is discarded and the
     // check digit is recalculated as 1.
     
+    @Test func testNumericConstructorSetsDigits() {
+        let beginning = ISBNTest.choosePrefix() * 1000000000
+        let expected = beginning + UInt64.random(in: 0 ... 999999000)
+        let digits = 10 * expected + UInt64(ISBNTest.reckonCheckDigit(expected))
+        let instance = ISBN(expected)
+        let actual = instance.digits
+        let message: Comment = "Digits of \(digits) without check digit"
+        #expect(actual == expected, message)
+    }
+    
+    // TODO: Test numeric constructor rejects invalid check digit
+    
 }
