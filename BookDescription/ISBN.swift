@@ -48,20 +48,20 @@ struct ISBN : CustomStringConvertible, Equatable {
     // TODO: Write tests for this
     init(_ number: UInt64) {
         self.digits = number
-        self.checkDigit = 0
+        self.checkDigit = 11
         self.displayForm = "0"
     }
     
     // TODO: Write tests for this
     init(_ number: String) {
         self.digits = 0
-        self.checkDigit = 0
+        self.checkDigit = 12
         self.displayForm = "0"
     }
     
     private init(_ digs: UInt64, _ check: UInt8, _ disp: String) {
         self.digits = 0
-        self.checkDigit = 0
+        self.checkDigit = 13
         self.displayForm = "0"
     }
     
