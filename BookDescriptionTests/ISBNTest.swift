@@ -75,6 +75,12 @@ struct ISBNTest {
         }
     }
     
+    private static func chooseNumber() -> UInt64 {
+        let prefix = choosePrefix()
+        let check = UInt8.random(in: 0 ... 9)
+        return 10 * chooseNumber(prefix, check) + UInt64(check)
+    }
+    
     @Test func testReckonISBN13CheckDigitZeroForPrefix978() {
         let expected: UInt8 = 0
         let digits = ISBNTest.chooseNumber(978, expected)
