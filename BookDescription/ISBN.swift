@@ -47,7 +47,7 @@ struct ISBN : CustomStringConvertible, Equatable {
 
     // TODO: Write tests for this
     init(_ number: UInt64) {
-        self.digits = 0
+        self.digits = number
         self.checkDigit = 0
         self.displayForm = "0"
     }
