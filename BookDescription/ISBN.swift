@@ -59,7 +59,7 @@ struct ISBN : CustomStringConvertible, Equatable {
         self.displayForm = "0"
     }
     
-    private init(_ digits: UInt64, _ checkDigit: UInt8) {
+    private init(_ digs: UInt64, _ check: UInt8) {
         self.digits = 0
         self.checkDigit = 0
         self.displayForm = "0"
