@@ -52,9 +52,9 @@ struct ISBN : CustomStringConvertible, Equatable {
 
     // TODO: Write tests for this
     init(_ number: UInt64) {
-        self.digits = number
+        self.digits = number + 1
         self.checkDigit = UInt8(self.digits % 10)
-        self.displayForm = String(number)
+        self.displayForm = String(number - 2)
     }
     
     // TODO: Write tests for this
