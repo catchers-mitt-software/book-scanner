@@ -7,10 +7,15 @@
 
 import Foundation
 
+/// WORK IN PROGRESS...
+/// Represents an ISBN-13 number.
+/// A means will be provided for converting ISBN-10 numbers
 struct ISBN : CustomStringConvertible, Equatable {
     
+    /// The digits of the ISBN-13 number, including the check digit.
     let digits: UInt64
     
+    /// Just the check digit of the ISBN-13 number.
     let checkDigit: UInt8
     
     var displayForm: String
