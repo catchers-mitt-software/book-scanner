@@ -252,12 +252,11 @@ struct ISBNTest {
     
     @Test func testNumericConstructorSetsDigits() {
         let beginning = ISBNTest.choosePrefix() * 1000000000
-        let expected = beginning + UInt64.random(in: 0 ... 999999000)
-        let digits = 10 * expected + UInt64(ISBNTest.reckonCheckDigit(expected))
+        let woCheck = beginning + UInt64.random(in: 0 ... 999999000)
+        let expected = 10 * woCheck + UInt64(ISBNTest.reckonCheckDigit(woCheck))
         let instance = ISBN(expected)
         let actual = instance.digits
-        let message: Comment = "Digits of \(digits) without check digit"
-        #expect(actual == expected, message)
+        #expect(actual == expected)
     }
     
     @Test func testNumericConstructorSetsCheckDigit() {
