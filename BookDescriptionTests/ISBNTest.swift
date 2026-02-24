@@ -260,6 +260,17 @@ struct ISBNTest {
         #expect(actual == expected, message)
     }
     
+    @Test func testNumericConstructorSetsCheckDigit() {
+        let prefix = ISBNTest.choosePrefix()
+        let expected = UInt8.random(in: 0 ... 9)
+        let woCheck = ISBNTest.chooseNumber(prefix, expected)
+        let digits = 10 * woCheck + UInt64(expected)
+        let instance = ISBN(digits)
+        let actual = instance.checkDigit
+        let message: Comment = "Getting check digit of \(digits)"
+        #expect(actual == expected, message)
+    }
+    
     // TODO: Test numeric constructor rejects invalid check digit
     
 }
