@@ -271,6 +271,14 @@ struct ISBNTest {
         #expect(actual == expected, message)
     }
     
+    @Test func testNumericConstructorSetsDisplayFormNoDashes() {
+        let number = ISBNTest.chooseNumber()
+        let instance = ISBN(number)
+        let expected = String(number)
+        let actual = instance.displayForm
+        #expect(actual == expected)
+    }
+    
     // TODO: Test numeric constructor rejects invalid check digit
     
 }
