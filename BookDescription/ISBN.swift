@@ -50,11 +50,10 @@ struct ISBN : CustomStringConvertible, Equatable {
         return UInt8(10 - modSum)
     }
 
-    // TODO: Write tests for this
     init(_ number: UInt64) {
-        self.digits = number + 1
+        self.digits = number
         self.checkDigit = UInt8(self.digits % 10)
-        self.displayForm = String(number - 2)
+        self.displayForm = String(number)
     }
     
     // TODO: Write tests for this
