@@ -63,7 +63,7 @@ struct ISBN : CustomStringConvertible, Equatable {
         } else {
             self.digits = UInt64(number)!
         }
-        self.checkDigit = 12
+        self.checkDigit = UInt8(self.digits % 10)
         self.displayForm = "0"
     }
     
