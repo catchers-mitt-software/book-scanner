@@ -58,7 +58,11 @@ struct ISBN : CustomStringConvertible, Equatable {
     
     // TODO: Write tests for this
     init(_ number: String) {
-        self.digits = 0
+        if number.contains("-") {
+            self.digits = 0
+        } else {
+            self.digits = UInt64(ISBN.removeDashes(number))
+        }
         self.checkDigit = 12
         self.displayForm = "0"
     }
