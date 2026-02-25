@@ -289,6 +289,17 @@ struct ISBNTest {
         #expect(actual == expected)
     }
     
+    @Test func testStringConstructorSetsCheckDigitFromDashlessString() {
+        let beginning = ISBNTest.choosePrefix() * 1000000000
+        let woCheck = beginning + UInt64.random(in: 0 ... 999999000)
+        let expected = ISBNTest.reckonCheckDigit(woCheck)
+        let numStr = String(10 * woCheck + UInt64(expected))
+        let instance = ISBN(numStr)
+        let actual = instance.checkDigit
+        let message: Comment = "Getting check digit from \"\(numStr)\""
+        #expect(actual == expected, message)
+    }
+    
     // TODO: Test String constructor rejects invalid check digit
     
 }
