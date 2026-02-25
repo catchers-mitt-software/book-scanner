@@ -280,4 +280,15 @@ struct ISBNTest {
     
     // TODO: Test numeric constructor rejects invalid check digit
     
+    @Test func testStringConstructorSetsDigitsFromDashlessString() {
+        let beginning = ISBNTest.choosePrefix() * 1000000000
+        let woCheck = beginning + UInt64.random(in: 0 ... 999999000)
+        let expected = 10 * woCheck + UInt64(ISBNTest.reckonCheckDigit(woCheck))
+        let instance = ISBN(String(expected))
+        let actual = instance.digits
+        #expect(actual == expected)
+    }
+    
+    // TODO: Test String constructor rejects invalid check digit
+    
 }
