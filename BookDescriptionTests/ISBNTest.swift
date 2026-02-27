@@ -289,6 +289,23 @@ struct ISBNTest {
         #expect(actual == expected)
     }
     
+    @Test func testConstructorSetsDigitsFromStringWithDashes() {
+        let prefix = ISBNTest.choosePrefix()
+        let registrant = UInt64.random(in: 0 ... 999)
+        let regStr = String(format: "%03d", registrant)
+        let publication = UInt64.random(in: 0 ... 99999)
+        let pubStr = String(format: "%05d", publication)
+        let woCheckStr = "\(prefix)-0-\(regStr)-\(pubStr)-"
+        let woCheckNum = ISBN.removeDashes(woCheckStr)
+        let check = ISBNTest.reckonCheckDigit(woCheckNum)
+        let numStr = woCheckStr + String(check)
+        let instance = ISBN(numStr)
+        let expected = 10 * woCheckNum + UInt64(check)
+        let actual = instance.digits
+        let message: Comment = "Getting digits for \"\(numStr)\""
+        #expect(actual == expected, message)
+    }
+    
     @Test func testStringConstructorSetsCheckDigitFromDashlessString() {
         let beginning = ISBNTest.choosePrefix() * 1000000000
         let woCheck = beginning + UInt64.random(in: 0 ... 999999000)
