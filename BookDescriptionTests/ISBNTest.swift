@@ -4,6 +4,10 @@
 //
 //  Created by Alonso del Arte on 1/5/26.
 //
+// To keep things simple for myself, in many of the tests involving numbers with
+// dashes, I use registration group 0 even though there are lots of other
+// registration groups.
+//
 // Note that some of these tests use numbers that are not valid ISBNs, as well
 // as valid ISBNs with valid check digits but incorrect dash placements.
 //
@@ -311,6 +315,22 @@ struct ISBNTest {
         let woCheck = beginning + UInt64.random(in: 0 ... 999999000)
         let expected = ISBNTest.reckonCheckDigit(woCheck)
         let numStr = String(10 * woCheck + UInt64(expected))
+        let instance = ISBN(numStr)
+        let actual = instance.checkDigit
+        let message: Comment = "Getting check digit from \"\(numStr)\""
+        #expect(actual == expected, message)
+    }
+    
+    @Test func testStringConstructorSetsCheckDigitFromStringWithDashes() {
+        let prefix = ISBNTest.choosePrefix()
+        let registrant = UInt64.random(in: 0 ... 999)
+        let regStr = String(format: "%03d", registrant)
+        let publication = UInt64.random(in: 0 ... 99999)
+        let pubStr = String(format: "%05d", publication)
+        let woCheckStr = "\(prefix)-0-\(regStr)-\(pubStr)-"
+        let woCheckNum = ISBN.removeDashes(woCheckStr)
+        let expected = ISBNTest.reckonCheckDigit(woCheckNum)
+        let numStr = woCheckStr + String(expected)
         let instance = ISBN(numStr)
         let actual = instance.checkDigit
         let message: Comment = "Getting check digit from \"\(numStr)\""
