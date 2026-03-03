@@ -56,11 +56,10 @@ struct ISBN : CustomStringConvertible, Equatable {
         self.displayForm = String(number)
     }
     
-    // TODO: Write tests for this
     init(_ number: String) {
         self.digits = UInt64(ISBN.removeDashes(number))
         self.checkDigit = UInt8(self.digits % 10)
-        self.displayForm = "0"
+        self.displayForm = number
     }
     
     private init(_ digs: UInt64, _ check: UInt8, _ disp: String) {
