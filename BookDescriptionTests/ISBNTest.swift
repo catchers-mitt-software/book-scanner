@@ -337,6 +337,21 @@ struct ISBNTest {
         #expect(actual == expected, message)
     }
     
+    @Test func testStringConstructorSetsDisplayForm() {
+        let prefix = ISBNTest.choosePrefix()
+        let registrant = UInt64.random(in: 0 ... 999)
+        let regStr = String(format: "%03d", registrant)
+        let publication = UInt64.random(in: 0 ... 99999)
+        let pubStr = String(format: "%05d", publication)
+        let woCheckStr = "\(prefix)-0-\(regStr)-\(pubStr)-"
+        let woCheckNum = ISBN.removeDashes(woCheckStr)
+        let check = ISBNTest.reckonCheckDigit(woCheckNum)
+        let expected = woCheckStr + String(check)
+        let instance = ISBN(expected)
+        let actual = instance.displayForm
+        #expect(actual == expected)
+    }
+    
     // TODO: Test String constructor rejects invalid check digit
     
 }
