@@ -354,4 +354,11 @@ struct ISBNTest {
     
     // TODO: Test String constructor rejects invalid check digit
     
+    @Test func testEquals() {
+        let number = ISBNTest.chooseNumber()
+        let someISBN = ISBN(number)
+        let sameISBN = ISBN(number)
+        #expect(someISBN == sameISBN)
+    }
+    
 }
