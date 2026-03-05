@@ -38,6 +38,14 @@ struct ISBNTest {
         #expect(actual == expected)
     }
     
+    private static func chooseDiffCheckDigit(_ digit: UInt8) -> UInt8 {
+        var prop = digit
+        while prop == digit {
+            prop = UInt8.random(in: 0 ... 9)
+        }
+        return prop
+    }
+    
     private static func reckonCheckDigit(_ num: UInt64) -> UInt8 {
         var multiplier: UInt64 = 3
         var curr: UInt64 = num
