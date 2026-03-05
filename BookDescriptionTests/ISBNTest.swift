@@ -369,4 +369,16 @@ struct ISBNTest {
         #expect(someISBN == sameISBN)
     }
     
+    @Test func testNotEquals() {
+        let numberA = ISBNTest.chooseNumber()
+        let isbnA = ISBN(numberA)
+        let prefix = numberA / 10000000000
+        let checkA = isbnA.checkDigit
+        let checkB = ISBNTest.chooseDiffCheckDigit(checkA)
+        let prelim = ISBNTest.chooseNumber(prefix, checkB)
+        let numberB = 10 * prelim + UInt64(checkB)
+        let isbnB = ISBN(numberB)
+        #expect(isbnA != isbnB)
+    }
+    
 }
