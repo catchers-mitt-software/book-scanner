@@ -49,6 +49,10 @@ struct ISBN : CustomStringConvertible, Equatable {
         }
         return UInt8(10 - modSum)
     }
+    
+    static func == (lhs: ISBN, rhs: ISBN) -> Bool {
+        false
+    }
 
     init(_ number: UInt64) {
         self.digits = number
