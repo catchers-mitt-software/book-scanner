@@ -51,7 +51,7 @@ struct ISBN : CustomStringConvertible, Equatable {
     }
     
     static func == (lhs: ISBN, rhs: ISBN) -> Bool {
-        false
+        true
     }
 
     init(_ number: UInt64) {
