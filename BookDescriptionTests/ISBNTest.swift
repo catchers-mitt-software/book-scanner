@@ -381,4 +381,10 @@ struct ISBNTest {
     // original digits are retained, except check digit 4 is discarded and the
     // check digit is recalculated as 1.
     
+    // TODO: Test conversion from ISBN-10 to ISBN-13 original check digit 0 .. 9
+    
+    // TODO: Test conversion from ISBN-10 to ISBN-13 original check digit X
+    
+    // TODO: Test conversion from ISBN-10 to ISBN-13 retains original dashes
+    
 }
