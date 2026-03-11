@@ -55,10 +55,13 @@ struct ISBN : CustomStringConvertible, Equatable {
     }
 
     init(_ number: UInt64) {
-        //           9781234567890
-        if (number < 978) {
-            self.digits = 1
-            self.checkDigit = 0
+        if (number < 9780000000000) {
+            let prefixed = 978000000000 + (number / 10)
+            let check = ISBN.reckonISBN13CheckDigit(prefixed)
+            self.digits = 10 * prefixed + UInt64(check)
+            // TODO: Write test for check digit
+            self.checkDigit = check + 1
+            // TODO: Write test for display form
             self.displayForm = "?"
         } else {
             self.digits = number
