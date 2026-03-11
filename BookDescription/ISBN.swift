@@ -60,8 +60,7 @@ struct ISBN : CustomStringConvertible, Equatable {
             let check = ISBN.reckonISBN13CheckDigit(prefixed)
             self.digits = 10 * prefixed + UInt64(check)
             self.checkDigit = check
-            // TODO: Write test for display form
-            self.displayForm = "? ? ?"
+            self.displayForm = String(self.digits)
         } else {
             self.digits = number
             self.checkDigit = UInt8(self.digits % 10)
