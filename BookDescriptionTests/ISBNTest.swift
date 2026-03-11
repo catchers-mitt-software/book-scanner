@@ -395,6 +395,17 @@ struct ISBNTest {
         #expect(actual == expected, message)
     }
     
+    @Test func testNumericConvertingConstructorSetsCheckDigit() {
+        let number = UInt64.random(in: 0 ... 9999999999)
+        let prefixedNumberNoCheck = 978000000000 + (number / 10)
+        let expected = ISBNTest.reckonCheckDigit(prefixedNumberNoCheck)
+        let converted = 10 * prefixedNumberNoCheck + UInt64(expected)
+        let instance = ISBN(number)
+        let actual = instance.checkDigit
+        let message: Comment = "Check for \(number) converted to \(converted)"
+        #expect(actual == expected, message)
+    }
+    
     // TODO: Test conversion from ISBN-10 to ISBN-13 original check digit 0 .. 9
     
     // Constructor that takes String
