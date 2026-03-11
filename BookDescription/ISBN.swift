@@ -61,7 +61,7 @@ struct ISBN : CustomStringConvertible, Equatable {
             self.digits = 10 * prefixed + UInt64(check)
             self.checkDigit = check
             // TODO: Write test for display form
-            self.displayForm = "?"
+            self.displayForm = "? ? ?"
         } else {
             self.digits = number
             self.checkDigit = UInt8(self.digits % 10)
