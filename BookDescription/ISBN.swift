@@ -55,9 +55,16 @@ struct ISBN : CustomStringConvertible, Equatable {
     }
 
     init(_ number: UInt64) {
-        self.digits = number
-        self.checkDigit = UInt8(self.digits % 10)
-        self.displayForm = String(number)
+        //           9781234567890
+        if (number < 978) {
+            self.digits = 1
+            self.checkDigit = 0
+            self.displayForm = "?"
+        } else {
+            self.digits = number
+            self.checkDigit = UInt8(self.digits % 10)
+            self.displayForm = String(number)
+        }
     }
     
     init(_ number: String) {
