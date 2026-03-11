@@ -381,8 +381,21 @@ struct ISBNTest {
     // original digits are retained, except check digit 4 is discarded and the
     // check digit is recalculated as 1.
     
+    /// Test that the constructor that takes a number converts a 10-digit number
+    /// to ISBN-13. We will not worry whether the ISBN-10 number has a valid
+    /// check digit or not.
+    @Test func testNumericConstructorConvertsISBN10ToISBN13() {
+        let number = UInt64.random(in: 0 ... 9999999999)
+        let prefixedNumberNoCheck = 978000000000 + (number / 10)
+        let check = ISBNTest.reckonCheckDigit(prefixedNumberNoCheck)
+        let converted = 10 * prefixedNumberNoCheck + UInt64(check)
+        let expected = ISBN(converted)
+        let actual = ISBN(number)
+        let message: Comment = "Number \(number) should convert to \(converted)"
+        #expect(actual == expected, message)
+    }
+    
     // TODO: Test conversion from ISBN-10 to ISBN-13 original check digit 0 .. 9
-    // Numeric constructor
     
     // Constructor that takes String
     
