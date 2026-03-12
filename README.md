@@ -19,6 +19,10 @@ For information about the ISBN format, I will be consulting
 reference, I have also started [a document](ISBN.md) in this repository with the 
 details about ISBN that I consider to be the most relevant to this project.
 
+I eventually stumbled upon the *ISBN Users' Manual* from the International ISBN 
+Agency. It is listed in [the bibliography](bibliography.bib). That bibliography 
+is only for books about books or about the classifications of books.
+
 This program should be able to scan both ISBN-10 and ISBN-13 barcodes. I have 
 decided that it will convert the older format to the newer format before  
 querying the API. Therefore, I will not worry about validating ISBN-10 check 
