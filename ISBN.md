@@ -84,8 +84,9 @@ reckon the remainder of the weighted sum divided by 11. If the check digit is
 
 In the examples, 123546789 got check digit 9, while 123456789 got check digit X, 
 since $1 + 2^2 + 3^2 + 5 \times 4 + 4 \times 5 + 6^2 + 7^2 + 8^2 + 9^2 = 284$ 
-and $284 \equiv 9 \pmod{11}$, whereas $$\sum_{i = 1}^9 i^2 = 285$$ and obviously 
-$285 \equiv 10 \pmod{11}$.
+and $284 \equiv 9 \pmod{11}$, whereas $$\sum_{i = 1}^9 d_i i^2 = 285$$ (where
+$d_1$ is the most significant digit and $d_9$ is the digit before the check 
+digit) and obviously $285 \equiv 10 \pmod{11}$.
 
 ## ISBN-13
 
