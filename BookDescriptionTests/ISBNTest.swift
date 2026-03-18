@@ -438,6 +438,26 @@ struct ISBNTest {
         #expect(actual == expected, message)
     }
         
+    /// Test that the constructor that takes a `String` converts a 10-digit
+    /// number to ISBN-13. We will not worry whether the ISBN-10 number has a
+    /// valid check digit or not.
+    @Test func testStringConstructorConvertsISBN10CheckDigitXToISBN13() {
+        let registrant = UInt64.random(in: 0 ... 999)
+        let regStr = String(format: "%03d", registrant)
+        let publication = UInt64.random(in: 0 ... 99999)
+        let pubStr = String(format: "%05d", publication)
+        let s = "0-\(regStr)-\(pubStr)-X"
+        let noX = s.replacingOccurrences(of: "-X", with: "")
+        let prelimISBN10 = UInt64(noX.replacingOccurrences(of: "-", with: ""))!
+        let prelimNoCheck = 978000000000 + prelimISBN10
+        let check = ISBNTest.reckonCheckDigit(prelimNoCheck)
+        let number = 10 * prelimNoCheck + UInt64(check)
+        let expected = ISBN(number)
+        let actual = ISBN(s)
+        let message: Comment = "Getting ISBN-13 of maybe valid ISBN-10 \"\(s)\""
+        #expect(actual == expected, message)
+    }
+        
     // TODO: Test conversion from ISBN-10 to ISBN-13 original check digit X
     // Constructor that takes String only, obviously
     
