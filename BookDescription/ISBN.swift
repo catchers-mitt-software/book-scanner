@@ -33,7 +33,7 @@ struct ISBN : CustomStringConvertible, Equatable {
         var multiplier: UInt64 = 3
         var curr: UInt64 = digits
         var sum: UInt64 = 0
-        while (curr > 0) {
+        while curr > 0 {
             let digit = curr % 10
             sum += digit * multiplier
             curr /= 10
@@ -44,7 +44,7 @@ struct ISBN : CustomStringConvertible, Equatable {
             }
         }
         let modSum = sum % 10
-        if (modSum == 0) {
+        if modSum == 0 {
             return 0
         }
         return UInt8(10 - modSum)
@@ -55,7 +55,7 @@ struct ISBN : CustomStringConvertible, Equatable {
     }
 
     init(_ number: UInt64) {
-        if (number < 9780000000000) {
+        if number < 9780000000000 {
             let prefixed = 978000000000 + (number / 10)
             let check = ISBN.reckonISBN13CheckDigit(prefixed)
             self.digits = 10 * prefixed + UInt64(check)
@@ -70,7 +70,7 @@ struct ISBN : CustomStringConvertible, Equatable {
     
     init(_ number: String) {
         let parsed = UInt64(ISBN.removeDashes(number))
-        if (parsed < 9780000000000) {
+        if parsed < 9780000000000 {
             let prelim = 978000000000 + (parsed / 10)
             let check = ISBN.reckonISBN13CheckDigit(prelim)
             self.digits = 10 * prelim + UInt64(check)
