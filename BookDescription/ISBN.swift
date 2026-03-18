@@ -69,7 +69,7 @@ struct ISBN : CustomStringConvertible, Equatable {
     }
     
     init(_ number: String) {
-        var parsed = UInt64(ISBN.removeDashes(number))
+        let parsed = UInt64(ISBN.removeDashes(number))
         if (parsed < 9780000000000) {
             let prelim = 978000000000 + (parsed / 10)
             let check = ISBN.reckonISBN13CheckDigit(prelim)
