@@ -70,7 +70,11 @@ struct ISBN : CustomStringConvertible, Equatable {
     
     init(_ number: String) {
         if number.hasSuffix("X") {
-            self.digits = 0
+            let noX = number.replacingOccurrences(of: "-X", with: "")
+            let parsed = ISBN.removeDashes(noX)
+            let prelim = 978000000000 + parsed
+            let check = ISBN.reckonISBN13CheckDigit(prelim)
+            self.digits = 10 * prelim + UInt64(check)
         } else {
             let parsed = UInt64(ISBN.removeDashes(number))
             if parsed < 9780000000000 {
