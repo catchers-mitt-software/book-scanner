@@ -4,7 +4,7 @@ I have not yet read the *ISBN Users' Manual* from the International ISBN Agency,
 though I do have the Sixth Edition as a PDF and have listed it in 
 [the bibliography](bibliography.bib).
 
-The International Standard Book Number (ISBN) format allows each book published 
+The International Standard Book Number (ISBN) format allows any book published 
 anywhere in the world to be uniquely identified by a 10- or 13-digit number. 
 These numbers consist of four or five elements, which are typically separated by 
 dashes or spaces in the human-readable number printed on the book itself, but 
