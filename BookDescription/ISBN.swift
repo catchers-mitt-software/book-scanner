@@ -82,7 +82,7 @@ struct ISBN : CustomStringConvertible, Equatable {
                 let prelim = 978000000000 + (parsed / 10)
                 let check = ISBN.reckonISBN13CheckDigit(prelim)
                 self.digits = 10 * prelim + UInt64(check)
-                self.checkDigit = 11
+                self.checkDigit = check
             } else {
                 self.digits = parsed
                 self.checkDigit = UInt8(self.digits % 10)
