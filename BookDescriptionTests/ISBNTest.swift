@@ -458,9 +458,6 @@ struct ISBNTest {
         #expect(actual == expected, message)
     }
         
-    // TODO: Test conversion from ISBN-10 to ISBN-13 original check digit X
-    // Constructor that takes String only, obviously
-    
     // TODO: Test conversion from ISBN-10 to ISBN-13 retains original dashes
     
 }
