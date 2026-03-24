@@ -498,6 +498,48 @@ struct ISBNTest {
         #expect(actual == expected, message)
     }
         
-    // TODO: Test conversion from ISBN-10 to ISBN-13 retains original dashes
-    
+    /// Test that the constructor that takes a `String` converts a 10-digit
+    /// number to ISBN-13, retaining the original dashes. We will not worry
+    /// whether the ISBN-10 number has a valid check digit or not.
+    @Test func testStringConstructorISBN10ToISBN13RetainsDashes() {
+        let registrant = UInt64.random(in: 0 ... 999)
+        let regStr = String(format: "%03d", registrant)
+        let publication = UInt64.random(in: 0 ... 99999)
+        let pubStr = String(format: "%05d", publication)
+        let noCheck = "0-\(regStr)-\(pubStr)-"
+        let possibleCheck = UInt64.random(in: 0 ... 9)
+        let s = "\(noCheck)\(possibleCheck)"
+        let prelimISBN10 = UInt64(s.replacingOccurrences(of: "-", with: ""))!
+        let prelimNoCheck = 978000000000 + (prelimISBN10 / 10)
+        let check = ISBNTest.reckonCheckDigit(prelimNoCheck)
+        let instance = ISBN(s)
+        let expected = "978-\(noCheck)\(check)"
+        let actual = instance.displayForm
+        let message: Comment =
+        "Getting human-readable ISBN-13 of maybe valid ISBN-10 \"\(s)\""
+        #expect(actual == expected, message)
+    }
+        
+    /// Test that the constructor that takes a `String` converts a 10-digit
+    /// number to ISBN-13, retaining the original dashes. We will not worry
+    /// whether the ISBN-10 number has a valid check digit or not.
+    @Test func testStringConstructorISBN10WithXToISBN13RetainsDashes() {
+        let registrant = UInt64.random(in: 0 ... 999)
+        let regStr = String(format: "%03d", registrant)
+        let publication = UInt64.random(in: 0 ... 99999)
+        let pubStr = String(format: "%05d", publication)
+        let noCheck = "0-\(regStr)-\(pubStr)-"
+        let s = "\(noCheck)X"
+        let prelimISBN10 =
+                10 * UInt64(noCheck.replacingOccurrences(of: "-", with: ""))!
+        let prelimNoCheck = 978000000000 + (prelimISBN10 / 10)
+        let check = ISBNTest.reckonCheckDigit(prelimNoCheck)
+        let instance = ISBN(s)
+        let expected = "978-\(noCheck)\(check)"
+        let actual = instance.displayForm
+        let message: Comment =
+        "Getting human-readable ISBN-13 of maybe valid ISBN-10 \"\(s)\""
+        #expect(actual == expected, message)
+    }
+        
 }
