@@ -76,19 +76,23 @@ struct ISBN : CustomStringConvertible, Equatable {
             let check = ISBN.reckonISBN13CheckDigit(prelim)
             self.digits = 10 * prelim + UInt64(check)
             self.checkDigit = check
+            self.displayForm = "978-\(noX)-\(check)"
         } else {
             let parsed = ISBN.removeDashes(number)
             if parsed < 9780000000000 {
                 let prelim = 978000000000 + (parsed / 10)
                 let check = ISBN.reckonISBN13CheckDigit(prelim)
+                let lastDashIndex = number.lastIndex(of: "-")!
+                let noCheck = number[..<lastDashIndex]
                 self.digits = 10 * prelim + UInt64(check)
                 self.checkDigit = check
+                self.displayForm = "978-\(noCheck)-\(check)"
             } else {
                 self.digits = parsed
                 self.checkDigit = UInt8(self.digits % 10)
+                self.displayForm = number
             }
         }
-        self.displayForm = number
     }
     
     private init(_ digs: UInt64, _ check: UInt8, _ disp: String) {
