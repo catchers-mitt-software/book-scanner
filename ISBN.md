@@ -168,3 +168,25 @@ reckon the ISBN-10 check digit for 0-7352-1473, which is 5.
 A number of workarounds suggest themselves for dealing with the 979 prefix, but 
 they're all tantamount to kicking the can down the road. Therefore it is much 
 preferable to upgrade old programs to handle ISBN-13 correctly.
+
+### More conversion examples
+
+First I'm going to gather eleven books that I have personally read at least 
+partially, and which were originally published before the introduction of 
+ISBN-13.
+
+| ISBN-10       | Author        | Title                                 |
+|---------------|---------------|---------------------------------------|
+| 0-312-18548-0 | Thomp., Gard. | *Calculus Made Easy*                  |
+| 0-7866-4517-2 | James Morton  | *You Can Teach Yourself Drums*        |
+| 0-201-89683-4 | Donald Knuth  | *Art of Computer Programming*, Vol. I |
+| 0-12-648550-X | Neil Sloane   | *Handbook of Integer Sequences*       |
+
+On conversion to ISBN-13, some retain the original check digit, most don't.
+
+| ISBN-10       | ISBN-13           |
+|---------------|-------------------|
+| 0-312-18548-0 | 978-0-312-18548-0 |
+| 0-7866-4517-2 | 978-0-7866-4517-6 |
+| 0-201-89683-4 | 978-0-201-89683-1 |
+| 0-12-648550-X | 978-0-12-648550-9 |
