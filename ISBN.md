@@ -190,3 +190,7 @@ On conversion to ISBN-13, some retain the original check digit, most don't.
 | 0-7866-4517-2 | 978-0-7866-4517-6 |
 | 0-201-89683-4 | 978-0-201-89683-1 |
 | 0-12-648550-X | 978-0-12-648550-9 |
+
+The Morton book is an interesting case in that it has been sold without 
+reprinting. The copy I checked out from the library has a sticker with both the 
+ISBN-10 and ISBN-13 numbers on it.
