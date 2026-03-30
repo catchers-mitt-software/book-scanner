@@ -281,7 +281,19 @@ struct ISBNTest {
         #expect(actual == expected)
     }
     
-    // TODO: Test numeric constructor rejects invalid check digit
+    @Test func testNumericConstructorRejectsInvalidCheckDigit() {
+        let number = ISBNTest.chooseNumber()
+        var invalid = number - 1
+        if invalid % 10 == 9 {
+            invalid += 10
+        }
+        let message: Comment
+        = "\(invalid) should cause error, \(number) is correct"
+        #expect(throws: CheckDigitError.self, message) {
+            let instance = ISBN(invalid)
+            print("\(message), should not have created \(instance)")
+        }
+    }
     
     @Test func testStringConstructorSetsDigitsFromDashlessString() {
         let beginning = ISBNTest.choosePrefix() * 1000000000
