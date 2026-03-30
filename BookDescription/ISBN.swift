@@ -54,7 +54,7 @@ struct ISBN : CustomStringConvertible, Equatable {
         lhs.digits == rhs.digits
     }
 
-    init(_ number: UInt64) {
+    init(_ number: UInt64) throws {
         if number < 9780000000000 {
             let prefixed = 978000000000 + (number / 10)
             let check = ISBN.reckonISBN13CheckDigit(prefixed)
@@ -62,8 +62,13 @@ struct ISBN : CustomStringConvertible, Equatable {
             self.checkDigit = check
             self.displayForm = String(self.digits)
         } else {
+            let givenCheck = UInt8(number % 10)
+            let crossCheck = ISBN.reckonISBN13CheckDigit(number / 10)
+            if givenCheck != crossCheck {
+                throw CheckDigitError(woCheck: 0, erroneousCheck: 0)
+            }
             self.digits = number
-            self.checkDigit = UInt8(self.digits % 10)
+            self.checkDigit = givenCheck
             self.displayForm = String(number)
         }
     }
