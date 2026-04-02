@@ -46,6 +46,19 @@ struct ISBNTest {
         #expect(actual == expected)
     }
     
+    @Test func testRemoveSpaces() {
+        let registrant = UInt64.random(in: 0 ... 999)
+        let regStr = String(format: "%03d", registrant)
+        let publication = UInt64.random(in: 0 ... 99999)
+        let pubStr = String(format: "%05d", publication)
+        let possibleCheck = UInt64.random(in: 0 ... 9)
+        let s = "978 0 \(regStr) \(pubStr) \(possibleCheck)"
+        let expected: UInt64 = 9780000000000 + registrant * 1000000 +
+                publication * 10 + possibleCheck
+        let actual: UInt64 = ISBN.removeSpaces(s)
+        #expect(actual == expected)
+    }
+    
     private static func chooseDiffCheckDigit(_ digit: UInt8) -> UInt8 {
         var prop = digit
         while prop == digit {
