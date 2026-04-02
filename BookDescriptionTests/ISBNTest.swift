@@ -59,6 +59,14 @@ struct ISBNTest {
         #expect(actual == expected)
     }
     
+    @Test func testRemoveSeparatorsWhenThereAreNoneToRemove() {
+        let expected: UInt64 = 9780000000000 +
+                UInt64.random(in: 0 ... 10000000000)
+        let numStr: String = expected.description
+        let actual: UInt64 = ISBN.removeSeparators(numStr)
+        #expect(actual == expected)
+    }
+    
     private static func chooseDiffCheckDigit(_ digit: UInt8) -> UInt8 {
         var prop = digit
         while prop == digit {
