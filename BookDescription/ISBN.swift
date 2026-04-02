@@ -29,6 +29,11 @@ struct ISBN : CustomStringConvertible, Equatable {
         return UInt64(parsed)!
     }
 
+    // TODO: Write tests for this
+    static func removeSpaces(_ s: String) -> UInt64 {
+        0
+    }
+
     static func reckonISBN13CheckDigit(_ digits: UInt64) -> UInt8 {
         var multiplier: UInt64 = 3
         var curr: UInt64 = digits
