@@ -33,6 +33,11 @@ struct ISBN : CustomStringConvertible, Equatable {
         let parsed = s.replacingOccurrences(of: " ", with: "")
         return UInt64(parsed)!
     }
+    
+    // TODO: Write tests for this
+    static func removeSeparators(_ s: String) -> UInt64 {
+        0
+    }
 
     static func reckonISBN13CheckDigit(_ digits: UInt64) -> UInt8 {
         var multiplier: UInt64 = 3
