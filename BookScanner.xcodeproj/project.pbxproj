@@ -46,6 +46,7 @@
 		61B407C12EF666D100EE509A /* Exceptions for "BookDescriptionTests" folder in "BookScannerTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				CheckDigitErrorTest.swift,
 				ISBNTest.swift,
 				YearTest.swift,
 			);
@@ -54,6 +55,7 @@
 		61B499912EF9F77A002FFB81 /* Exceptions for "BookDescriptionTests" folder in "BookScanner" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				CheckDigitErrorTest.swift,
 				ISBNTest.swift,
 				YearTest.swift,
 			);
