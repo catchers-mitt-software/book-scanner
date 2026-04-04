@@ -79,6 +79,22 @@ struct ISBN : CustomStringConvertible, Equatable {
         }
     }
     
+    static func extractISBN(num: UInt64) throws -> ISBN {
+        if num > 9779999999990 {
+            return ISBN(num)
+        } else {
+            throw CheckDigitError(woCheck: num, erroneousCheck: 253)
+        }
+    }
+    
+    static func extractISBN(s: String) throws -> ISBN {
+        if s.starts(with: "978") {
+            return ISBN(s)
+        } else {
+            throw CheckDigitError(woCheck: 978, erroneousCheck: 255)
+        }
+    }
+    
     init(_ number: String) {
         if number.hasSuffix("X") {
             let noX = number.replacingOccurrences(of: "-X", with: "")
