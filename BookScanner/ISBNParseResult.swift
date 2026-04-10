@@ -11,7 +11,7 @@ struct ISBNParseResult {
     
     let isbn: ISBN?
     
-    let problem: CheckDigitError?
+    let problem: ParseError?
     
     // TODO: Write tests for this
     init(num: UInt64) {
