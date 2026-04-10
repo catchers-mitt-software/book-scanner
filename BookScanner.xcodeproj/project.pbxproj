@@ -46,7 +46,6 @@
 		61B407C12EF666D100EE509A /* Exceptions for "BookDescriptionTests" folder in "BookScannerTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				CheckDigitErrorTest.swift,
 				ISBNTest.swift,
 				YearTest.swift,
 			);
@@ -55,11 +54,17 @@
 		61B499912EF9F77A002FFB81 /* Exceptions for "BookDescriptionTests" folder in "BookScanner" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				CheckDigitErrorTest.swift,
 				ISBNTest.swift,
 				YearTest.swift,
 			);
 			target = 616F1A712EF52FA3002C4A7D /* BookScanner */;
+		};
+		61ECE6042F89933E007EBA5C /* Exceptions for "BookScanner" folder in "BookScannerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CheckDigitError.swift,
+			);
+			target = 616F1A7E2EF52FA4002C4A7D /* BookScannerTests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -80,6 +85,9 @@
 		};
 		616F1A742EF52FA3002C4A7D /* BookScanner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				61ECE6042F89933E007EBA5C /* Exceptions for "BookScanner" folder in "BookScannerTests" target */,
+			);
 			path = BookScanner;
 			sourceTree = "<group>";
 		};
