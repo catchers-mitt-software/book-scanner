@@ -7,6 +7,8 @@
 
 import Foundation
 
+// The general idea here is that this object holds either a valid ISBN or an 
+// error object
 struct ISBNParseResult {
     
     let isbn: ISBN?
