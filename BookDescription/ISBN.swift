@@ -38,6 +38,11 @@ struct ISBN : CustomStringConvertible, Equatable {
         let secondPass = firstPass.replacingOccurrences(of: " ", with: "")
         return UInt64(secondPass)!
     }
+    
+    // TODO: Write tests for this
+    static func reckonISBN10CheckDigit(_ digits: UInt32) -> UInt8 {
+        13
+    }
 
     static func reckonISBN13CheckDigit(_ digits: UInt64) -> UInt8 {
         var multiplier: UInt64 = 3

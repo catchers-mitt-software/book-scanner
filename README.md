@@ -28,7 +28,9 @@ cataloguing systems like the Dewey decimal classification.
 This program should be able to scan both ISBN-10 and ISBN-13 barcodes. I have 
 decided that it will convert the older format to the newer format before  
 querying the API. Therefore, I will not worry about validating ISBN-10 check 
-digits. I reserve the right to revisit that decision later on.
+digits. I reserve the right to revisit that decision later on. **April 13, 
+2026.** I have decided that ISBN-10 numbers will be validated, but I have also 
+changed my mind about where that validation should take place.
 
 Some books show both numbers. For example, *The First 100 Chinese Characters* 
 from the Tuttle Language Library shows ISBN-13 978-0-8048-3830-6 _and_ ISBN-10 
