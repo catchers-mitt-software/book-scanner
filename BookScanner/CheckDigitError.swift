@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CheckDigitError : ParseError {
+struct CheckDigitError {
     
     init(woCheck: UInt64, erroneousCheck: UInt8) {
         //

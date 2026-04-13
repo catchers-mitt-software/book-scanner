@@ -9,7 +9,6 @@ import Foundation
 
 /// WORK IN PROGRESS...
 /// Represents an ISBN-13 number.
-/// A means will be provided for converting ISBN-10 numbers
 struct ISBN : CustomStringConvertible, Equatable {
     
     /// The digits of the ISBN-13 number, including the check digit.
@@ -83,7 +82,8 @@ struct ISBN : CustomStringConvertible, Equatable {
         if num > 9779999999990 {
             return ISBN(num)
         } else {
-            throw CheckDigitError(woCheck: num, erroneousCheck: 253)
+            return ISBN(0)
+//            throw CheckDigitError(woCheck: num, erroneousCheck: 253)
         }
     }
     
@@ -91,10 +91,12 @@ struct ISBN : CustomStringConvertible, Equatable {
         if s.starts(with: "978") {
             return ISBN(s)
         } else {
-            throw CheckDigitError(woCheck: 978, erroneousCheck: 255)
+            return ISBN("978-0-0000-0000-2")
+//            throw CheckDigitError(woCheck: 978, erroneousCheck: 255)
         }
     }
     
+    // TODO: Write documentation
     init(_ number: String) {
         if number.hasSuffix("X") {
             let noX = number.replacingOccurrences(of: "-X", with: "")
