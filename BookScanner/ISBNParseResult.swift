@@ -17,7 +17,7 @@ struct ISBNParseResult {
     
     // TODO: Write tests for this
     init(_ num: UInt64) {
-        self.isbn = ISBN(0)
+        self.isbn = ISBN(num)
         self.problem = nil
     }
     
