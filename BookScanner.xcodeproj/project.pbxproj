@@ -63,6 +63,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				CheckDigitError.swift,
+				ParseError.swift,
 			);
 			target = 616F1A7E2EF52FA4002C4A7D /* BookScannerTests */;
 		};
