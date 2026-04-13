@@ -16,13 +16,13 @@ struct ISBNParseResult {
     let problem: ParseError?
     
     // TODO: Write tests for this
-    init(num: UInt64) {
+    init(_ num: UInt64) {
         self.isbn = ISBN(0)
         self.problem = nil
     }
     
     // TODO: Write tests for this
-    init(s: String) {
+    init(_ s: String) {
         self.isbn = ISBN(0)
         self.problem = nil
     }
