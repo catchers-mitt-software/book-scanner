@@ -448,13 +448,15 @@ struct ISBNTest {
         return propNum
     }
     
-    @Test func testReckonISBN10CheckDigit0() {
-        let expected: UInt8 = 0
-        let num = ISBNTest.chooseISBN10(expected)
-        let actual = ISBN.reckonISBN10CheckDigit(num)
-        let numStr = String(format: "%09d", num)
-        let message: Comment = "\(numStr) should have check digit \(expected)"
-        #expect(actual == expected, message)
+    @Test func testReckonISBN10CheckDigit() {
+        for expected: UInt8 in 0 ... 10 {
+            let num = ISBNTest.chooseISBN10(expected)
+            let actual = ISBN.reckonISBN10CheckDigit(num)
+            let numStr = String(format: "%09d", num)
+            let message: Comment 
+                    = "\(numStr) should have check digit \(expected)"
+            #expect(actual == expected, message)
+        }
     }
     
     /// Test that the constructor that takes a number converts a 10-digit number
