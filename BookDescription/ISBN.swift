@@ -41,7 +41,7 @@ struct ISBN : CustomStringConvertible, Equatable {
     
     // TODO: Write tests for this
     static func reckonISBN10CheckDigit(_ digits: UInt64) -> UInt8 {
-        13
+        0
     }
 
     static func reckonISBN13CheckDigit(_ digits: UInt64) -> UInt8 {
