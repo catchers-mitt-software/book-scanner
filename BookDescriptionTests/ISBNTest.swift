@@ -427,6 +427,36 @@ struct ISBNTest {
         #expect(isbnA != isbnB)
     }
     
+    private static func reckonCheckDigitISBN10(_ num: UInt64) -> UInt8 {
+        var curr: UInt64 = num
+        var sum: UInt64 = 0
+        for weight in (1 ... 9).reversed() {
+            let digit = curr % 10
+            let weighted = digit * UInt64(weight)
+            sum += weighted
+            curr /= 10
+        }
+        return UInt8(sum % 11)
+    }
+    
+    private static func chooseISBN10(_ check: UInt8) -> UInt64 {
+        let max: UInt64 = 987654321
+        var propNum = UInt64.random(in: 0 ... max)
+        while reckonCheckDigitISBN10(propNum) != check {
+            propNum += 1
+        }
+        return propNum
+    }
+    
+    @Test func testReckonISBN10CheckDigit0() {
+        let expected: UInt8 = 0
+        let num = ISBNTest.chooseISBN10(expected)
+        let actual = ISBN.reckonISBN10CheckDigit(num)
+        let numStr = String(format: "%09d", num)
+        let message: Comment = "\(numStr) should have check digit \(expected)"
+        #expect(actual == expected, message)
+    }
+    
     /// Test that the constructor that takes a number converts a 10-digit number
     /// to ISBN-13. We will not worry whether the ISBN-10 number has a valid
     /// check digit or not.
