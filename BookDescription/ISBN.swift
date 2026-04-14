@@ -39,9 +39,16 @@ struct ISBN : CustomStringConvertible, Equatable {
         return UInt64(secondPass)!
     }
     
-    // TODO: Write tests for this
     static func reckonISBN10CheckDigit(_ digits: UInt64) -> UInt8 {
-        0
+        var curr: UInt64 = digits
+        var sum: UInt64 = 0
+        for weight in (1 ... 9).reversed() {
+            let digit = curr % 10
+            let weighted = digit * UInt64(weight)
+            sum += weighted
+            curr /= 10
+        }
+        return UInt8(sum % 11)
     }
 
     static func reckonISBN13CheckDigit(_ digits: UInt64) -> UInt8 {
