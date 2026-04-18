@@ -15,10 +15,10 @@ agencies in several countries. Publishers buy ISBNs from the agencies in the
 countries where they publish.
 
 A publisher can buy an ISBN in advance of the proofreading process for a book 
-being completed, or the book even being written. Buying ISBNs in advance 
-certainly makes sense for large publishers. Before the books become available to 
-the general public, the publisher registers the titles with the affiliate agency 
-they purchased the ISBNs from.
+being completed, or the book even being written. Buying ISBNs in advance and in 
+bulk certainly makes sense for large publishers. Before the books become 
+available to the general public, the publisher registers the titles with the 
+affiliate agency they purchased the ISBNs from.
 
 Keep in mind that many titles have multiple ISBNs. This is especially the case 
 with famous public domain titles, such as *The Hound of the Baskervilles* by Sir 
