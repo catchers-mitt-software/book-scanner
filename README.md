@@ -22,8 +22,9 @@ details about ISBN that I consider to be the most relevant to this project.
 
 I eventually stumbled upon the *ISBN Users' Manual* from the International ISBN 
 Agency. It is listed in [the bibliography](bibliography.bib). That bibliography 
-is only for books about books or about the classifications of books, including 
-cataloguing systems like the Dewey decimal classification.
+is for books about books or about the classifications of books, including  
+cataloguing systems like the Dewey decimal classification, as well as for books 
+about barcodes and such.
 
 This program should be able to scan both ISBN-10 and ISBN-13 barcodes. I have 
 decided that it will convert the older format to the newer format before  
