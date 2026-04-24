@@ -4,7 +4,9 @@ WORK IN PROGRESS
 
 The idea is that this app will scan ISBN barcodes and pull up book data. It will 
 not scan UPCs. However, if the user does not give permission to use the phone's 
-camera, this app will give the user the option of typing in the barcode.
+camera, this app will give the user the option of typing in the barcode. In 
+which case the app should allow the user to type in the ISBN in whatever way is 
+the most convenient, be it with dashes or spaces or without.
 
 At a minimum, the book data should include the author's name, the title, 
 publisher and the broad genre, but maybe not necessarily the subgenre.
