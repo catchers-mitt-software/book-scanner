@@ -15,7 +15,7 @@ struct CheckDigitError : ParseError {
     
     // TODO: Write tests for this
     init(_ woCheck: UInt64, erroneousCheck: UInt8) {
-        self.unchecked = 9800000000000
+        self.unchecked = woCheck
         self.badCheck = 12
     }
     
