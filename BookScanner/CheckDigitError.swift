@@ -14,7 +14,7 @@ struct CheckDigitError : ParseError {
     let badCheck: UInt8
     
     // TODO: Write tests for this
-    init(woCheck: UInt64, erroneousCheck: UInt8) {
+    init(_ woCheck: UInt64, erroneousCheck: UInt8) {
         self.unchecked = 9800000000000
         self.badCheck = 12
     }
