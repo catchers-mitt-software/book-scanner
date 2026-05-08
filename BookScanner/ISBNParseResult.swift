@@ -25,7 +25,7 @@ struct ISBNParseResult {
             self.problem = nil
         } else {
             self.isbn = nil
-            self.problem = CheckDigitError(assigned, erroneousCheck: 10)
+            self.problem = CheckDigitError(assigned, erroneousCheck: unverified)
         }
     }
     
