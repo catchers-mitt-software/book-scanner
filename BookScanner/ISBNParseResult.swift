@@ -17,8 +17,16 @@ struct ISBNParseResult {
     
     // TODO: Write tests for this
     init(_ num: UInt64) {
-        self.isbn = ISBN(num)
-        self.problem = nil
+        let assigned = num / 10
+        let unverified = UInt8(num % 10)
+        let checked = ISBN.reckonISBN13CheckDigit(assigned)
+        if checked == unverified {
+            self.isbn = ISBN(num)
+            self.problem = nil
+        } else {
+            self.isbn = nil
+            self.problem = CheckDigitError(assigned, erroneousCheck: 10)
+        }
     }
     
     // TODO: Write tests for this
