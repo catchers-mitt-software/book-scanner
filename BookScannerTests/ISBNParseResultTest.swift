@@ -36,5 +36,19 @@ struct ISBNParseResultTest {
         let actual = ISBNParseResult(number).isbn
         #expect(actual == expected)
     }
+    
+    @Test func testNumericConstructorRejectsInvalidISBN13Check() {
+        let num = ISBNParseResultTest.chooseAssignedDigits()
+        let check = ISBN.reckonISBN13CheckDigit(num)
+        let expected = (check == 9) ? 0 : check + 1
+        let badNumber = 10 * num + UInt64(expected)
+        let instance = ISBNParseResult(badNumber)
+        let message: Comment = "Invalid ISBN \(badNumber) should be rejected"
+        #expect(instance.isbn == nil, message)
+        if instance.problem is CheckDigitError {
+            #expect((instance.problem as! CheckDigitError).badCheck == expected,
+                    message)
+        } // TODO: Test if instance.problem is not CheckDigitError
+    }
 
 }
