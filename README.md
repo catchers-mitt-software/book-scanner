@@ -8,7 +8,7 @@ camera, this app will give the user the option of typing in the barcode. In
 which case the app should allow the user to type in the ISBN in whatever way is 
 the most convenient, be it with dashes or spaces or without.
 
-At a minimum, the book data should include the author's name, the title, 
+At a minimum, the book data should include the author's name, the book's title, 
 publisher and the broad genre, but maybe not necessarily the subgenre.
 
 I'm thinking of using the Open Library API. For information on using that API 
