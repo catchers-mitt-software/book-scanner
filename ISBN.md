@@ -92,7 +92,9 @@ digit) and obviously $285 \equiv 10 \pmod{11}$.
 
 The newer format was instituted in 2007, well before publishers started running 
 out of ISBN-10 numbers. It was devised in such a way that any book with an 
-ISBN-10 number automatically has an ISBN-13 number as well.
+ISBN-10 number automatically has an ISBN-13 number as well. Some registration 
+groups have run out of ISBN-10 numbers, but some registration groups still have 
+available ISBN-10 numbers and some have not been allocated at all.
 
 An ISBN-13 number consists of five elements, four of which are also applicable 
 to ISBN-10:
