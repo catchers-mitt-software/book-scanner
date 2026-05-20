@@ -118,7 +118,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Miscellaneous
+### Vim ###
+*.swp
+
+### Miscellaneous ###
 draft/
 secrets/
 Secrets/
