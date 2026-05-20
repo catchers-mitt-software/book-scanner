@@ -438,7 +438,7 @@ struct ISBNTest {
         return UInt8(sum % 11)
     }
     
-    private static func chooseISBN10(_ check: UInt8) -> UInt64 {
+    static func chooseISBN10(_ check: UInt8) -> UInt64 {
         let max: UInt64 = 987654321
         var propNum = UInt64.random(in: 0 ... max)
         while reckonCheckDigitISBN10(propNum) != check {
