@@ -17,15 +17,21 @@ struct ISBNParseResult {
     
     // TODO: Write tests for this
     init(_ num: UInt64) {
-        let assigned = num / 10
-        let unverified = UInt8(num % 10)
-        let checked = ISBN.reckonISBN13CheckDigit(assigned)
-        if checked == unverified {
+        //          1234567890
+        if num < 9780000000000 {
             self.isbn = ISBN(num)
             self.problem = nil
         } else {
-            self.isbn = nil
-            self.problem = CheckDigitError(assigned, erroneousCheck: unverified)
+            let assigned = num / 10
+            let unverified = UInt8(num % 10)
+            let checked = ISBN.reckonISBN13CheckDigit(assigned)
+            if checked == unverified {
+                self.isbn = ISBN(num)
+                self.problem = nil
+            } else {
+                self.isbn = nil
+                self.problem = CheckDigitError(assigned, erroneousCheck: unverified)
+            }
         }
     }
     
