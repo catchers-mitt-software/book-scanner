@@ -50,5 +50,20 @@ struct ISBNParseResultTest {
                     message)
         } // TODO: Test if instance.problem is not CheckDigitError
     }
+    
+    /// Test that the numeric constructor accepts a valid ISBN-10 number but
+    /// converts it to ISBN-13. Obviously we can't test this for ISBN-10 numbers
+    /// with check digit X.
+    @Test func testNumericConstructorAcceptsValidISBN10AndConvertsToISBN13() {
+        for check: UInt8 in (0 ... 9) {
+            let num = 10 * ISBNTest.chooseISBN10(check) + UInt64(check)
+            let instance = ISBNParseResult(num)
+            let expected = ISBN(num)
+            let actual = instance.isbn
+            let message: Comment = "ISBN-10 \(num) should convert to ISBN-13"
+            #expect(instance.problem == nil, message)
+            #expect(expected == actual, message)
+        }
+    }
 
 }
