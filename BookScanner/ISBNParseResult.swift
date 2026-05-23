@@ -17,7 +17,6 @@ struct ISBNParseResult {
     
     // TODO: Write tests for this
     init(_ num: UInt64) {
-        //          1234567890
         if num < 9780000000000 {
             self.isbn = ISBN(num)
             self.problem = nil
