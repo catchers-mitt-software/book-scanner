@@ -16,31 +16,20 @@ struct ISBNParseResult {
     let problem: ParseError?
     
     init(_ num: UInt64) {
-        // TODO: Refactor to cut down on duplication
+        let assigned = num / 10
+        let unverified = UInt8(num % 10)
+        let checked: UInt8
         if num < 9780000000000 {
-            let assigned = num / 10
-            let unverified = UInt8(num % 10)
-            let checked = ISBN.reckonISBN10CheckDigit(assigned)
-            if checked == unverified {
-                self.isbn = ISBN(num)
-                self.problem = nil
-            } else {
-                self.isbn = nil
-                self.problem = CheckDigitError(assigned,
-                                               erroneousCheck: unverified)
-            }
+            checked = ISBN.reckonISBN10CheckDigit(assigned)
         } else {
-            let assigned = num / 10
-            let unverified = UInt8(num % 10)
-            let checked = ISBN.reckonISBN13CheckDigit(assigned)
-            if checked == unverified {
-                self.isbn = ISBN(num)
-                self.problem = nil
-            } else {
-                self.isbn = nil
-                self.problem = CheckDigitError(assigned,
-                                               erroneousCheck: unverified)
-            }
+            checked = ISBN.reckonISBN13CheckDigit(assigned)
+        }
+        if checked == unverified {
+            self.isbn = ISBN(num)
+            self.problem = nil
+        } else {
+            self.isbn = nil
+            self.problem = CheckDigitError(assigned, erroneousCheck: unverified)
         }
     }
     
