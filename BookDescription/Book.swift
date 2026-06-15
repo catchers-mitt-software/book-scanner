@@ -5,16 +5,20 @@
 //  Created by Alonso del Arte on 12/19/25.
 //
 
-struct Book {
+import Foundation
+
+struct Book : Decodable, Identifiable {
+    
+    var id: String { isbn }
     
     let title: String
     
-    let author: Author
+    let author: String
     
-    let publisher: Publisher
+    let publisher: String
     
-    let year: Year
+    let year: Int
     
-    let isbn: ISBN
+    let isbn: String
     
 }
