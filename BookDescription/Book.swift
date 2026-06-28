@@ -13,11 +13,11 @@ struct Book : Decodable, Identifiable {
     
     let title: String
     
-    let author: String
+    let author_name: [String]
     
-    let publisher: String
+//    let publisher: String
     
-    let year: Int
+//    let year: Int
     
     let isbn: String
     
