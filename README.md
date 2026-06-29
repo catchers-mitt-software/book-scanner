@@ -1,6 +1,15 @@
 # Book Scanner
 
-WORK IN PROGRESS
+WORK IN PROGRESS: In June 2026, I made some headway in the quick-and-dirty 
+branch. I've gotten it to the point where you can type the digits of the ISBN-13 
+and get the title of the book and the first author. Next two priorities are 
+getting it to show the book's cover and enabling the camera to scan a book's 
+ISBN so the user doesn't have to type it in.
+
+Since I'm not doing proper testing in the quick and dirty branch, I don't intend 
+to merge that branch to main.
+
+----
 
 The idea is that this app will scan ISBN barcodes and pull up book data. It will 
 not scan UPCs. However, if the user does not give permission to use the phone's 
