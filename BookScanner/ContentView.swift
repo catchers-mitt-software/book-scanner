@@ -8,15 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var service = BookService()
+    
+    @State private var bookID = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            HStack {
+                Text("Search by ISBN")
+                TextField("e.g., 978-0-123-45670-0",
+                          text: $bookID).onSubmit {
+                    Task {
+                        do {
+                            try await service.getBook(isbn: ISBN(bookID))
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+            }
+            VStack {
+                if !service.books.isEmpty {
+                    Text(service.books[0].title).font(.largeTitle)
+                    Text(service.books[0].author_name[0]).font(.subheadline)
+                }
+//                List(service.books) { book in
+//                    Text(book.title).font(.largeTitle)
+//                    // if (movie.Poster != "N/A") {
+//                        // AsyncImage(url: URL(string: movie.Poster))
+//                    // }
+//                    Text(book.author)
+//                }
+            }
         }
         .padding()
     }
+    
 }
 
 #Preview {
