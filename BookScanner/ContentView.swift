@@ -32,6 +32,7 @@ struct ContentView: View {
                 if !service.books.isEmpty {
                     Text(service.books[0].title).font(.largeTitle)
                     Text(service.books[0].author_name[0]).font(.subheadline)
+                    AsyncImage(url: URL(string: BookService.bookCoverURL(isbn: ISBN(service.books[0].isbn))))
                 }
 //                List(service.books) { book in
 //                    Text(book.title).font(.largeTitle)

@@ -29,6 +29,11 @@ class BookService : ObservableObject {
         }
     }
     
+    static func bookCoverURL(isbn: ISBN) -> String {
+        let numStr = String(isbn.digits)
+        return "https://covers.openlibrary.org/b/isbn/\(numStr)-L.jpg"
+    }
+    
     private struct OpenLibraryAPIResponse : Decodable, Identifiable {
         
         var id: String { q }
