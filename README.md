@@ -1,6 +1,8 @@
 # Book Scanner
 
-WORK IN PROGRESS
+WORK IN PROGRESS: Note that this is the quick and dirty branch. I've made some 
+progress getting some things to work, but due to the lack of proper testing, 
+this version of the app may crash unexpectedly.
 
 The idea is that this app will scan ISBN barcodes and pull up book data. It will 
 not scan UPCs. However, if the user does not give permission to use the phone's 
