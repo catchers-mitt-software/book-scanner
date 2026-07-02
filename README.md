@@ -16,11 +16,13 @@ else, it would be 3-6-5-1 for ISBN-13.
 At a minimum, the book data should include the author's name, the book's title, 
 publisher and the broad genre, but maybe not necessarily the subgenre.
 
-I'm thinking of using the Open Library API. For information on using that API 
-from a program, see the API's 
+I'm using the Open Library API. For information on using that API from a 
+program, see the API's 
 [Developer Center](https://openlibrary.org/developers/api). However, it appears 
 to lack the genre and subgenre information that I need for a project related to 
-this project.
+this project. The best API, without regard for cost, seems to be ISBN DB. You 
+can use it for free, but the free tier seems too be way too limited to be usable 
+by an app such as this one.
 
 For information about the ISBN format, I will be consulting 
 [the ISBN.org FAQ](https://www.isbn.org/faqs_general_questions). For ease of 
