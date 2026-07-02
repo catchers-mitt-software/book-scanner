@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import VisionKit
 
 struct ContentView: View {
     
     @StateObject var service = BookService()
     
     @State private var bookID = ""
+    
+    let viewController =
+    DataScannerViewController(recognizedDataTypes: [.barcode()],
+                              qualityLevel: .accurate,
+                              recognizesMultipleItems: false,
+                              isHighFrameRateTrackingEnabled: false,
+                              isHighlightingEnabled: true)
     
     var body: some View {
         VStack {
