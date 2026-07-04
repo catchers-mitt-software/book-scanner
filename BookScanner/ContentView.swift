@@ -6,8 +6,17 @@
 //
 
 import SwiftUI
+import VisionKit
 
 struct ContentView: View {
+
+    let viewController =
+    DataScannerViewController(recognizedDataTypes: [.barcode()],
+                              qualityLevel: .accurate,
+                              recognizesMultipleItems: false,
+                              isHighFrameRateTrackingEnabled: false,
+                              isHighlightingEnabled: true)
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
