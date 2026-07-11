@@ -26,6 +26,10 @@ Arthur Conan Doyle in English, which has some three or four thousand ISBNs, and
 that's ignoring scripts for theatrical adaptations and translations to other 
 languages.
 
+Also, even within one publishing house, one title can and should have multiple 
+ISBNs, one for each format (such as hardcover and paperback) and for each 
+edition (first edition, second edition, etc.).
+
 ## ISBN-10
 
 Although ISBN-10 is deprecated in favor of ISBN-13, the large amount of books 
