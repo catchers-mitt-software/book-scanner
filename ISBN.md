@@ -33,9 +33,9 @@ edition (first edition, second edition, etc.).
 ## ISBN-10
 
 Although ISBN-10 is deprecated in favor of ISBN-13, the large amount of books 
-printed with the old numbers that are still in libraries everywhere prevents the 
-complete abandonment of ISBN-10 numbers. The old ISBN-10 numbers can be 
-converted to ISBN-13 numbers, as detailed later on in this document.
+printed only with the old numbers that are still in libraries everywhere 
+prevents the complete abandonment of ISBN-10 numbers. The old ISBN-10 numbers 
+can be converted to ISBN-13 numbers, as detailed later on in this document.
 
 The expansion was necessary because ISBN-10 couldn't accommodate more than a 
 billion books. Some of the examples in this document are the ISBNs of real books 
@@ -49,7 +49,7 @@ An ISBN-10 number consists of four elements, which are also present in ISBN-13:
 * The registration group element, which consists of one to five digits and 
 identifies the registration group the publisher is in. For example, the 
 registration group element for many books in English printed in the United 
-States are in registration group 0.
+States is registration group 0.
 * The registrant element, which may consist of up to seven digits depending on 
 how many digits are taken up by the registration group element. This element 
 identifies the publisher as registered for ISBN. For example, Riverhead Books, 
@@ -170,6 +170,17 @@ discard the check digit and recalculate it according to the formula for ISBN-10.
 For example, the paperback reprint of *Kingdom of Characters* by Jing Tsu has 
 ISBN 978-0-7352-1473-6. Deleting the 978 prefix and discarding check digit 6, we 
 reckon the ISBN-10 check digit for 0-7352-1473, which is 5.
+
+Many books are published with both the ISBN-10 and ISBN-13 numbers printed in 
+human-readable form, with the barcode presumably being ISBN-13, though the 
+International ISBN Agency frowns on this practice. For example, the first 
+edition of *Scala for the Impatient* by Cay Horstmann was published in paperback 
+by Addison-Wesley Pearson Education with both ISBN-13 978-0-321-77409-5 *and* 
+ISBN-10 0-321-77409-4 in human-readable form on the back. The second edition was 
+published in paperback by Addison-Wesley in a somewhat different relationship to 
+Pearson with both ISBN-13 978-0-13-454056-6 and ISBN-10 0-13-454056-5 in 
+human-readable form on the back. This is presumably necessary for the older 
+software that can't deal with ISBN-13.
 
 A number of workarounds suggest themselves for dealing with the 979 prefix, but 
 they're all tantamount to kicking the can down the road. Therefore it is much 
