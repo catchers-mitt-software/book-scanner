@@ -1,8 +1,8 @@
 #  The ISBN format
 
-I have not yet read the *ISBN Users' Manual* from the International ISBN Agency, 
-though I do have the Sixth Edition as a PDF and have listed it in 
-[the bibliography](bibliography.bib).
+I have not yet read the *ISBN Users' Manual* from the International ISBN Agency 
+in its entirety. I have the Sixth Edition as a PDF and have listed it in [the 
+bibliography](bibliography.bib).
 
 The International Standard Book Number (ISBN) format allows any book published 
 anywhere in the world to be uniquely identified by a 10- or 13-digit number. 
